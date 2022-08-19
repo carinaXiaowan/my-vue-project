@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   css: {
-    // css预处理器
+    //指定传递给 CSS 预处理器的选项
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
@@ -27,6 +27,17 @@ export default defineConfig({
         modifyVars: {
           "@primary-color": "red",
         },
+      },
+    },
+    devSourcemap: true,
+  },
+  server: {
+    open: true, //在开发服务器启动时自动在浏览器中打开应用程序
+    proxy: {
+      "/api": {
+        target: "http://localhost:3001",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
