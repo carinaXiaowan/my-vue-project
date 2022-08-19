@@ -24,9 +24,6 @@ export default defineConfig({
       less: {
         javascriptEnabled: true,
         charset: false,
-        modifyVars: {
-          "@primary-color": "red",
-        },
       },
     },
     devSourcemap: true,
