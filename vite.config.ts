@@ -38,7 +38,7 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    terserOptions: {},
-  },
+  // build: {
+  //   terserOptions: {},
+  // },
 });
