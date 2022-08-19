@@ -11,12 +11,13 @@ locale.value = zhCN;
 
 <template>
   <a-config-provider :locale="locale">
+    <router-view />
     <!-- 动画效果 -->
-    <router-view v-slot="{ Component, route }">
+    <!-- <router-view v-slot="{ Component, route }">
       <transition :name="(route.meta.transition as any)">
         <component :is="Component" />
       </transition>
-    </router-view>
+    </router-view> -->
   </a-config-provider>
 </template>
 

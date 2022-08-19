@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
-import TheWelcome from "@/components/TheWelcome.vue";
-import { homePinia } from "@/stores/home";
-const homePinaData = homePinia();
-const { fullName } = storeToRefs(homePinaData);
+// 导入文件
+import { useRouter } from "vue-router";
+
+// 逻辑部分
+const router = useRouter();
+// 跳转到关于页面
+const handleJumpToAbout = () => {
+  router.push("/about");
+};
 </script>
 
 <template>
   <main>
-    {{ fullName }}
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
+    <a-button @click="handleJumpToAbout">关于我们</a-button>
   </main>
 </template>
