@@ -23,28 +23,6 @@ const routes = [
         meta: {
           title: "详情",
         },
-        // children: [
-        //   {
-        //     path: "list",
-        //     name: "list",
-        //     component: HomeView,
-        //     meta: {
-        //       transition: "slide-left",
-        //       title: "列表页",
-        //       code: "list",
-        //     },
-        //   },
-        //   {
-        //     path: "detail",
-        //     name: "detail",
-        //     component: () => import("../views/about/AboutView.vue"),
-        //     meta: {
-        //       transition: "slide-right",
-        //       title: "列表详情",
-        //       code: "about",
-        //     },
-        //   },
-        // ],
       },
     ],
   },
