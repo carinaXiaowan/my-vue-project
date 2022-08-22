@@ -1,13 +1,18 @@
 <script setup lang="ts">
+// 导入的文件
 import {
   PieChartOutlined,
   DesktopOutlined,
   UserOutlined,
 } from "@ant-design/icons-vue";
 import { ref } from "vue";
+
+// 逻辑部分
 const collapsed = ref<boolean>(false);
 const selectedKeys = ref<string[]>(["1"]);
 </script>
+
+<!-- 页面渲染 -->
 <template>
   <a-layout class="layout" style="min-height: 100vh">
     <!-- 左侧菜单导航 -->
@@ -36,23 +41,20 @@ const selectedKeys = ref<string[]>(["1"]);
       </a-menu>
     </a-layout-sider>
     <!-- 右侧内容 -->
-    <a-layout>
+    <a-layout class="layout-right">
       <!-- 顶部信息 -->
-      <a-layout-header style="background: #fff; padding: 0" />
+      <a-layout-header class="layout-right-header" />
       <!-- 面包屑 -->
-      <a-layout-content style="margin: 0 16px">
-        <a-breadcrumb style="margin: 16px 0">
-          <a-breadcrumb-item>User</a-breadcrumb-item>
-          <a-breadcrumb-item>Bill</a-breadcrumb-item>
-        </a-breadcrumb>
-        <div
-          :style="{ padding: '24px', background: '#fff', minHeight: '360px' }"
-        >
-          Bill is a cat.
-        </div>
+      <a-breadcrumb class="layout-right-breadcrumb">
+        <a-breadcrumb-item>User</a-breadcrumb-item>
+        <a-breadcrumb-item>Bill</a-breadcrumb-item>
+      </a-breadcrumb>
+      <a-layout-content class="layout-right-content">
+        <!-- 路由页面内容 -->
+        <router-view></router-view>
       </a-layout-content>
       <!-- 底部版权信息 -->
-      <a-layout-footer style="text-align: center">
+      <a-layout-footer class="layout-right-footer">
         Ant Design ©2018 Created by Ant UED
       </a-layout-footer>
     </a-layout>
