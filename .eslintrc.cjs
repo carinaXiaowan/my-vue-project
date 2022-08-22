@@ -16,6 +16,13 @@ module.exports = {
       "error",
       { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
     ],
+    "prettier/prettier": [
+      "error",
+      {},
+      {
+        usePrettierrc: false,
+      },
+    ],
   },
   parserOptions: {
     ecmaVersion: "latest",

@@ -26,9 +26,18 @@ const handleJump = (item: any) => {
   <!-- 左侧菜单导航 -->
   <a-layout-sider v-model:collapsed="collapsed" collapsible>
     <div class="logo" />
-    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @click="handleJump">
+    <a-menu
+      v-model:selectedKeys="selectedKeys"
+      theme="dark"
+      mode="inline"
+      @click="handleJump"
+    >
       <template v-for="item in menuList">
-        <SubNav :key="(item as any).name" v-if="item.children && item.children.length > 0" :sub-menu="item" />
+        <SubNav
+          :key="(item as any).name"
+          v-if="item.children && item.children.length > 0"
+          :sub-menu="item"
+        />
         <a-menu-item v-else :key="(item as any).name + (item as any).name">
           <pie-chart-outlined />
           <span>{{ (item.meta as any).title }}</span>
