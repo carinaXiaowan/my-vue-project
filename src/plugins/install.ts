@@ -16,8 +16,13 @@ export function install(app: App<Element>) {
   app.use(Antd);
   // 替换moment为dayjs
   app.use(DatePicker).use(TimePicker).use(Calendar);
-  // antd全局配置
+  // antd全局配置 （optional API全局使用   或者使用getCurrentInstance获取的proxy去获取）
   app.config.globalProperties.$message = message;
   app.config.globalProperties.$notification = notification;
   app.config.globalProperties.$confirm = Modal.confirm;
+
+  // provide/inject全局注册
+  // app.provide("$message", message);
+  // app.provide("$notification", notification);
+  // app.provide("$confirm", Modal.confirm);
 }
