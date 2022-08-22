@@ -1,34 +1,44 @@
+// https://stylelint.io/user-guide/rules/list/indentation/
 module.exports = {
-  extends: ["stylelint-config-recommended-vue"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-html/vue",
+    "stylelint-config-recommended-vue",
+  ],
   plugins: ["stylelint-order"],
   customSyntax: "postcss-html",
+  ignoreFiles: ["**/*.js", "**/*.jsx", "**/*.tsx", "**/*.ts", "**/*.json"],
   rules: {
-    indentation: 4,
-    // 兼容自定义标签名
-    "selector-type-no-unknown": [
-      true,
-      {
-        ignoreTypes: [],
-      },
-    ],
-    // 忽略伪类选择器 ::v-deep
+    indentation: 2,
     "selector-pseudo-element-no-unknown": [
       true,
       {
-        ignorePseudoElements: ["v-deep"],
+        ignorePseudoElements: ["v-deep", ":deep"],
       },
     ],
-    // 禁止低优先级的选择器出现在高优先级的选择器之后。
+    "number-leading-zero": "always",
     "no-descending-specificity": null,
-    // 不验证@未知的名字，为了兼容scss的函数
+    "function-url-quotes": "always",
+    "string-quotes": "single",
+    "unit-case": null,
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "rule-empty-line-before": "never",
+    "font-family-no-missing-generic-family-keyword": null,
+    "selector-type-no-unknown": null,
+    "block-opening-brace-space-before": "always",
     "at-rule-no-unknown": null,
-    // 禁止空注释
-    "comment-no-empty": true,
-    // 禁止简写属性的冗余值
-    "shorthand-property-no-redundant-values": true,
-    // 禁止空第一行
-    "no-empty-first-line": true,
-    // 属性的排序
+    "no-duplicate-selectors": null,
+    "property-no-unknown": null,
+    "no-empty-source": null,
+    "selector-class-pattern": null,
+    "keyframes-name-pattern": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { ignorePseudoClasses: ["global"] },
+    ],
+    "function-no-unknown": null,
     "order/properties-order": [
       "position",
       "top",
@@ -49,6 +59,20 @@ module.exports = {
       "margin-right",
       "margin-bottom",
       "margin-left",
+      "padding",
+      "padding-top",
+      "padding-right",
+      "padding-bottom",
+      "padding-left",
+      "width",
+      "min-width",
+      "max-width",
+      "height",
+      "min-height",
+      "max-height",
+      "font-size",
+      "font-family",
+      "font-weight",
       "border",
       "border-style",
       "border-width",
@@ -70,20 +94,6 @@ module.exports = {
       "border-left-width",
       "border-left-color",
       "border-radius",
-      "padding",
-      "padding-top",
-      "padding-right",
-      "padding-bottom",
-      "padding-left",
-      "width",
-      "min-width",
-      "max-width",
-      "height",
-      "min-height",
-      "max-height",
-      "font-size",
-      "font-family",
-      "font-weight",
       "text-align",
       "text-justify",
       "text-indent",

@@ -39,8 +39,8 @@ const handleJump = (item: any) => {
 </template>
 <style scoped lang="less">
 .logo {
-  height: 32px;
   margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
+  height: 32px;
+  background: rgb(255 255 255 / 30%);
 }
 </style>

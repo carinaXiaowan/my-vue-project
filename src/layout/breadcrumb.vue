@@ -13,9 +13,9 @@
 </template>
 <style scoped lang="less">
 .breadcrumb-wrap {
-  height: 50px;
   display: flex;
   align-items: center;
   padding-left: 16px !important;
+  height: 50px;
 }
 </style>

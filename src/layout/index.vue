@@ -28,6 +28,6 @@ import Breadcrumb from "./breadcrumb.vue";
   </a-layout>
 </template>
 <style scoped lang="less">
-@import "@/assets/global.less";
-@import "./index.less";
+@import '@/assets/global.less';
+@import './index.less';
 </style>
