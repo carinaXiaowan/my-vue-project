@@ -18,11 +18,11 @@ defineProps(["subMenu"]);
     <template v-for="item in subMenu.children">
       <!-- 递归遍历自己（注意加判断条件） -->
       <SubNav
-        :key="(item as any).meta .code"
+        :key="(item as any).name"
         v-if="item.children && item.children.length > 0"
         :sub-menu="item"
       />
-      <a-menu-item v-else :key="(item as any).meta .code + (item as any).name">
+      <a-menu-item v-else :key="(item as any).name + (item as any).name">
         <span>{{ (item as any).meta.title }}</span>
       </a-menu-item>
     </template>

@@ -11,6 +11,13 @@ const selectedKeys = ref<string[]>(["1"]);
 // 导航菜单处理
 const router = useRouter();
 const menuList = router.options.routes[0].children;
+// 页面跳转
+const handleJump = (item: any) => {
+  console.info(item);
+  router.push({
+    name: item.key,
+  });
+};
 </script>
 
 <!-- 页面渲染 -->
@@ -18,14 +25,19 @@ const menuList = router.options.routes[0].children;
   <!-- 左侧菜单导航 -->
   <a-layout-sider v-model:collapsed="collapsed" collapsible>
     <div class="logo" />
-    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
+    <a-menu
+      v-model:selectedKeys="selectedKeys"
+      theme="dark"
+      mode="inline"
+      @click="handleJump"
+    >
       <template v-for="item in menuList">
         <SubNav
-          :key="(item.meta as any).code"
+          :key="(item as any).name"
           v-if="item.children && item.children.length > 0"
           :sub-menu="item"
         />
-        <a-menu-item v-else :key="(item.meta as any).code + (item as any).name">
+        <a-menu-item v-else :key="(item as any).name + (item as any).name">
           <pie-chart-outlined />
           <span>{{ (item.meta as any).title }}</span>
         </a-menu-item>
