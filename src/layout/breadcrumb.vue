@@ -26,7 +26,6 @@ const getBreadcrumb = () => {
 const duplicateRemoval = (arr: any) => {
   const hash: any = {}
   arr = arr.reduce(function (arr: any, current: any) {
-    console.log(20, current)
     hash[current.meta.title] ? '' : (hash[current.meta.title] = true && arr.push(current))
     return arr
   }, [])
