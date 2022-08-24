@@ -1,16 +1,16 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
 
-export const homePinia = defineStore("homePinia", {
+export const homePinia = defineStore('homePinia', {
   state: () => ({
-    firstName: "carina",
-    lastName: "chen",
+    firstName: 'carina',
+    lastName: 'chen'
   }),
   getters: {
-    fullName: (state) => state.firstName + state.lastName,
+    fullName: (state) => state.firstName + state.lastName
   },
   actions: {
     setFirstName(data: string) {
-      this.firstName = data;
-    },
-  },
-});
+      this.firstName = data
+    }
+  }
+})

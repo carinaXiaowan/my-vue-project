@@ -1,10 +1,10 @@
 <!-- 递归二级菜单 -->
 <script setup lang="ts">
 // 导入的文件
-import { UserOutlined } from "@ant-design/icons-vue";
-import { defineProps } from "vue";
+import { UserOutlined } from '@ant-design/icons-vue'
+import { defineProps } from 'vue'
 // 逻辑部分
-defineProps(["subMenu"]);
+defineProps(['subMenu'])
 </script>
 
 <template>

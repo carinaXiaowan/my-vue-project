@@ -1,6 +1,4 @@
 module.exports = {
-  //  #让prettier使用eslint的代码格式进行校验
-  'prettier.eslintIntegration': true,
   // 定制格式化要求
   overrides: [
     {
@@ -12,7 +10,7 @@ module.exports = {
   ],
   printWidth: 100, // 一行最多 100 字符
   tabWidth: 2, // 使用 4 个空格缩进
-  semi: false, // 行尾需要有分号
+  semi: true, //句末使用分号
   Semicolons: true, //在语句末尾添加分号
   singleQuote: true, // 使用单引号而不是双引号
   useTabs: false, // 用制表符而不是空格缩进行
@@ -31,4 +29,4 @@ module.exports = {
   vueIndentScriptAndStyle: false, //（默认值）对于 .vue 文件，不缩进 <script> 和 <style> 里的内容
   endOfLine: 'lf', // 换行符使用 lf 在Linux和macOS以及git存储库内部通用\n
   embeddedLanguageFormatting: 'auto' //（默认值）允许自动格式化内嵌的代码块
-}
+};
