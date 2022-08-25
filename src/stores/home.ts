@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const homePinia = defineStore('homePinia', {
   state: () => ({
@@ -10,7 +10,7 @@ export const homePinia = defineStore('homePinia', {
   },
   actions: {
     setFirstName(data: string) {
-      this.firstName = data
+      this.firstName = data;
     }
   }
-})
+});
