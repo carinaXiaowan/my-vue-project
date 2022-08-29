@@ -1,10 +1,12 @@
 <script setup lang="ts">
   // 导入的文件
   import { reactive,ref} from 'vue';
+  import { useRouter } from 'vue-router';
   import type { FormInstance } from 'ant-design-vue';
   import type { FormState } from './interface.d';
 
   // 逻辑部分
+  const router = useRouter();
   const formRef = ref<FormInstance>();
   const form = reactive<FormState>({
     username:'admin',
@@ -24,7 +26,8 @@
   const handleSubmit =async ()=>{
     if( formRef.value){
       const values = await formRef.value.validateFields();
-      console.info(values)
+      localStorage.setItem('useInfo',JSON.stringify(values));
+      router.push('/home')
     } 
   }
 </script>
