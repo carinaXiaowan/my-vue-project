@@ -29,7 +29,7 @@ const handleJump = (item: any) => {
   <a-layout-sider v-model:collapsed="collapsed" collapsible>
     <div class="logo">
       <img src="~@/assets/images/logo.png" alt="" />
-      <h2 v-show="!collapsed" class="title">One Piece</h2>
+      <h2 v-show="!collapsed" class="title">萌宠</h2>
     </div>
     <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @click="handleJump">
       <template v-for="item in menuList">
@@ -47,7 +47,6 @@ const handleJump = (item: any) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 24px;
   height: 64px;
   line-height: 64px;
 

@@ -2,8 +2,10 @@
 // 导入的文件
 import { watch } from 'vue'
 import { useRoute } from 'vue-router';
+import TopHeader from './top-header.vue';
 import Nav from './nav.vue';
 import Breadcrumb from './breadcrumb.vue';
+import Footer from './footer.vue';
 // 逻辑部分
 const route = useRoute();
 watch(() => route,(value, oldValue)=>{
@@ -22,7 +24,7 @@ watch(() => route,(value, oldValue)=>{
     <!-- 右侧内容 -->
     <a-layout class="layout-right">
       <!-- 顶部信息 -->
-      <a-layout-header class="layout-right-header" />
+      <TopHeader />
       <!-- 面包屑 -->
       <Breadcrumb />
       <a-layout-content class="layout-right-content">
@@ -30,9 +32,7 @@ watch(() => route,(value, oldValue)=>{
         <router-view></router-view>
       </a-layout-content>
       <!-- 底部版权信息 -->
-      <a-layout-footer class="layout-right-footer">
-        Ant Design ©2018 Created by Ant UED
-      </a-layout-footer>
+      <Footer />
     </a-layout>
   </a-layout>
   <section v-else>

@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
     ASpin: typeof import('ant-design-vue/es')['Spin']
     ASubMenu: typeof import('ant-design-vue/es')['SubMenu']
+    ATooltip: typeof import('ant-design-vue/es')['Tooltip']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
