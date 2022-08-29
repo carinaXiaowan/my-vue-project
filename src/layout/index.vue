@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // 导入的文件
-import Nav from './nav.vue'
-import Breadcrumb from './breadcrumb.vue'
+import Nav from './nav.vue';
+import Breadcrumb from './breadcrumb.vue';
 // 逻辑部分
 </script>
 

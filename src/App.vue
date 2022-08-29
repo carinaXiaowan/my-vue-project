@@ -18,8 +18,12 @@ const { loading } = storeToRefs(appPiniaData);
 
 <template>
   <a-config-provider :locale="locale">
-    <a-spin :spinning="loading" tip="加载中..."><router-view /></a-spin>
+    <a-spin :spinning="loading" tip="加载中...">
+      <RouterView class="router-view" v-slot="{ Component }">
+        <transition name="slide-left">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
+    </a-spin>
   </a-config-provider>
 </template>
-
-<style scoped lang="less"></style>

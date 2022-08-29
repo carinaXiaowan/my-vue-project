@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -13,10 +13,11 @@ module.exports = {
     'vue/setup-compiler-macros': true
   },
   parserOptions: {
-    ecmaVersion: 12
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020
   },
   rules: {
-    'prettier/prettier': 'warn',
+    'prettier/prettier': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     'vue/multi-word-component-names': 'off', //关闭命名规则,不校验组件名称
@@ -29,4 +30,4 @@ module.exports = {
     'no-func-assign': 2, //禁止重复的函数声明
     'no-multi-spaces': 1 //不能用多余的空格
   }
-}
+};

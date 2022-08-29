@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const aboutPinia = defineStore('aboutPinia', {
   state: () => ({
@@ -6,7 +6,7 @@ export const aboutPinia = defineStore('aboutPinia', {
   }),
   actions: {
     setNewMessage(data: string) {
-      this.message = data
+      this.message = data;
     }
   }
-})
+});

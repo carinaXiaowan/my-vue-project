@@ -37,15 +37,33 @@ service.interceptors.request.use(
 // 响应拦截
 service.interceptors.response.use(
   (response) => {
+    successHandle(response);
     appPiniaData.$reset(); // 关闭loading
-    return response;
   },
   (error) => {
-    appPiniaData.$reset(); // 关闭loading
     errorHandle(error); // 处理错误状态码
-    return Promise.reject(error);
+    appPiniaData.$reset(); // 关闭loading
   }
 );
+
+// 处理响应成功
+function successHandle(response: any) {
+  const { data, status, headers } = response;
+  if (status === 200) {
+    if (headers.authorization) {
+      setToken(headers.authorization);
+    }
+    if (status == 202) {
+      console.log('登录失效，请重新登录');
+    }
+    if (status == 212) {
+      console.log('您的账号在其他地方登录,您已被强制下线!如非本人操作,请及时修改密码!');
+    }
+    return Promise.resolve(data);
+  } else {
+    return Promise.reject(response);
+  }
+}
 
 // 处理异常
 function errorHandle(error: any) {
@@ -90,6 +108,7 @@ function errorHandle(error: any) {
   } else {
     proxy.$message.error('请求失败');
   }
+  Promise.reject(error);
 }
 
 // 给请求头添加 access_token

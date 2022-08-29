@@ -1,43 +1,43 @@
 <script setup lang="ts">
 // 导入的文件
-import { useRoute } from 'vue-router'
-import { onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router';
+import { onMounted, ref, watch } from 'vue';
 
 // 逻辑部分
-const route = useRoute()
-const routes: any = ref([])
+const route = useRoute();
+const routes: any = ref([]);
 // 初始化
 onMounted(() => {
-  getBreadcrumb()
-})
+  getBreadcrumb();
+});
 // 获取面包屑
 const getBreadcrumb = () => {
-  let matched = route.matched
-  matched = duplicateRemoval(matched)
-  routes.value = []
+  let matched = route.matched;
+  matched = duplicateRemoval(matched);
+  routes.value = [];
   //如果不是首页
   matched.forEach((item: any) => {
-    item.children = []
-    if (item.path == '/' || item.meta.title == '') return
-    routes.value.push(item)
-  })
-}
+    item.children = [];
+    if (item.path == '/' || item.meta.title == '') return;
+    routes.value.push(item);
+  });
+};
 // 去除重复数据
 const duplicateRemoval = (arr: any) => {
-  const hash: any = {}
+  const hash: any = {};
   arr = arr.reduce(function (arr: any, current: any) {
-    hash[current.meta.title] ? '' : (hash[current.meta.title] = true && arr.push(current))
-    return arr
-  }, [])
-  return arr
-}
+    hash[current.meta.title] ? '' : (hash[current.meta.title] = true && arr.push(current));
+    return arr;
+  }, []);
+  return arr;
+};
 //监听路由变化
 watch(
   () => route.path,
   () => {
-    getBreadcrumb()
+    getBreadcrumb();
   }
-)
+);
 </script>
 
 <!-- 页面渲染 -->
