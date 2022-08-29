@@ -27,6 +27,8 @@ watch(() => route,(value, oldValue)=>{
       <TopHeader />
       <!-- 面包屑 -->
       <Breadcrumb />
+      
+      <svg-icon iconName="icon-moban"></svg-icon>
       <a-layout-content class="layout-right-content">
         <!-- 路由页面内容 -->
         <router-view></router-view>
