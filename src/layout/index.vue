@@ -35,10 +35,10 @@ watch(() => route,(value, oldValue)=>{
       </a-layout-footer>
     </a-layout>
   </a-layout>
-  <a-card v-else>
+  <section v-else>
     <!-- 路由页面内容 -->
     <router-view></router-view>
-  </a-card>
+  </section>
 </template>
 <style scoped lang="less">
 @import "@/assets/global.less";
