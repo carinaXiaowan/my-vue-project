@@ -10,7 +10,9 @@ const collapsed = ref<boolean>(false);
 const selectedKeys = ref<string[]>(['homehome']);
 // 导航菜单处理
 const router = useRouter();
-const menuList = router.options.routes[0].children;
+let menuList:Array<any> | undefined= router.options.routes[0].children;
+// 导航栏过滤掉登录页面
+menuList = menuList?.filter(item=>item.name !='login');
 // 页面跳转
 const handleJump = (item: any) => {
   // 不知道为啥，antd的a-menu组件的key多拼接了一次
