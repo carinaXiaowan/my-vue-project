@@ -10,9 +10,9 @@ const collapsed = ref<boolean>(false);
 const selectedKeys = ref<string[]>(['homehome']);
 // 导航菜单处理
 const router = useRouter();
-let menuList:Array<any> | undefined= router.options.routes[0].children;
+let menuList: Array<any> | undefined = router.options.routes[0].children;
 // 导航栏过滤掉登录页面
-menuList = menuList?.filter(item=>item.name !='login');
+menuList = menuList?.filter((item) => item.name != 'login');
 // 页面跳转
 const handleJump = (item: any) => {
   // 不知道为啥，antd的a-menu组件的key多拼接了一次
@@ -26,7 +26,7 @@ const handleJump = (item: any) => {
 <!-- 页面渲染 -->
 <template>
   <!-- 左侧菜单导航 -->
-  <a-layout-sider v-model:collapsed="collapsed" collapsible>
+  <a-layout-sider v-model:collapsed="collapsed" collapsible class="nav-wrap">
     <div class="logo">
       <img src="~@/assets/images/logo.png" alt="" />
       <h2 v-show="!collapsed" class="title">萌宠</h2>
@@ -35,30 +35,36 @@ const handleJump = (item: any) => {
       <template v-for="item in menuList">
         <SubNav :key="(item as any).name" v-if="item.children && item.children.length > 0" :sub-menu="item" />
         <a-menu-item v-else :key="(item as any).name + (item as any).name">
-          <pie-chart-outlined />
-          <span>{{ (item.meta as any).title }}</span>
+          <svg-icon :iconName="item.meta.icon" color="rgba(255,255,255,0.65)" :className="collapsed ? 'icon' : ''"></svg-icon>
+          <span v-if="!collapsed">{{ (item.meta as any).title }}</span>
         </a-menu-item>
       </template>
     </a-menu>
   </a-layout-sider>
 </template>
 <style scoped lang="less">
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 64px;
-  line-height: 64px;
-
-  img {
-    margin-right: 8px;
-    height: 32px;
+.nav-wrap {
+  .icon {
+    margin-left: -4px;
   }
 
-  .title {
-    margin-top: 10px;
-    font-size: 14px;
-    color: blanchedalmond;
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    line-height: 64px;
+
+    img {
+      margin-right: 8px;
+      height: 32px;
+    }
+
+    .title {
+      margin-top: 10px;
+      font-size: 14px;
+      color: blanchedalmond;
+    }
   }
 }
 </style>

@@ -22,17 +22,73 @@ const routes: Array<RouteRecordRaw> = [
         name: 'home',
         component: Home,
         meta: {
-          title: '首页'
+          title: '首页',
+          icon:'icon-shouye'
         }
       },
       {
-        path: '/about',
-        name: 'about',
+        path: '/user',
+        name: 'user',
         component: () => import('@/views/about/index.vue'),
         meta: {
-          title: '详情'
+          title: '用户管理',
+          icon:'icon-yonghuguanli_huaban'
         }
-      }
+      },
+      {
+        path: '/doormodel',
+        name: 'doormodel',
+        component: () => import('@/views/about/index.vue'),
+        meta: {
+          title: '装修户型',
+          icon:'icon-tubiao_huxingku'
+        }
+      },
+      {
+        path: '/material',
+        name: 'material',
+        component: () => import('@/views/about/index.vue'),
+        meta: {
+          title: '装修材料',
+          icon:'icon-cailiaokufang'
+        }
+      },
+      {
+        path: '/price',
+        name: 'price',
+        component: () => import('@/views/about/index.vue'),
+        meta: {
+          title: '装修报价',
+          icon:'icon-baojia'
+        }
+      },
+      {
+        path: '/design',
+        name: 'design',
+        component: () => import('@/views/about/index.vue'),
+        meta: {
+          title: '设计效果',
+          icon:'icon-kanxiaoguo'
+        }
+      },
+      {
+        path: '/order',
+        name: 'order',
+        component: () => import('@/views/about/index.vue'),
+        meta: {
+          title: '装修订单',
+          icon:'icon-dingdan1'
+        }
+      },
+      {
+        path: '/company',
+        name: 'company',
+        component: () => import('@/views/about/index.vue'),
+        meta: {
+          title: '装修公司',
+          icon:'icon-zhuangxiugongsi'
+        }
+      },
     ]
   }
 ];
