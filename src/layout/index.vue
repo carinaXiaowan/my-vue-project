@@ -8,16 +8,6 @@ import Breadcrumb from './breadcrumb.vue';
 import Footer from './footer.vue';
 // 逻辑部分
 const route = useRoute();
-watch(
-  () => route,
-  (value, oldValue) => {
-    console.log(value.name, '新的路由');
-    console.log(oldValue, '旧的路由');
-  },
-  {
-    immediate: true
-  }
-);
 </script>
 
 <!-- 页面渲染 -->

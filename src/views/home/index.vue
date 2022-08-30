@@ -6,7 +6,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 // 跳转到关于页面
 const handleJumpToAbout = () => {
-  router.push('/about');
+  router.push('/user');
 };
 console.info('dad', import.meta.env.VITE_SOME_KEY);
 </script>

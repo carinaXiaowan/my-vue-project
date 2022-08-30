@@ -1,15 +1,17 @@
 <script setup lang="ts">
 // 导入的文件
-import { PieChartOutlined } from '@ant-design/icons-vue';
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, reactive, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import SubNav from './sub-nav.vue';
 
 // 逻辑部分
 const collapsed = ref<boolean>(false);
-const selectedKeys = ref<string[]>(['homehome']);
+const options = reactive<Record<string, string[] | undefined | null>>({
+  selectedKeys: ['homehome']
+});
 // 导航菜单处理
 const router = useRouter();
+const route = useRoute();
 let menuList: Array<any> | undefined = router.options.routes[0].children;
 // 导航栏过滤掉登录页面
 menuList = menuList?.filter((item) => item.name != 'login');
@@ -21,6 +23,18 @@ const handleJump = (item: any) => {
     name: currentKey
   });
 };
+
+// 监听路由变化
+watch(
+  () => route,
+  (value: any, oldValue) => {
+    options.selectedKeys = [`${value.name}`.repeat(2)];
+  },
+  {
+    immediate: true,
+    deep: true
+  }
+);
 </script>
 
 <!-- 页面渲染 -->
@@ -31,7 +45,7 @@ const handleJump = (item: any) => {
       <img src="~@/assets/images/logo.png" alt="" />
       <h2 v-show="!collapsed" class="title">萌宠</h2>
     </div>
-    <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @click="handleJump">
+    <a-menu v-model:selectedKeys="options.selectedKeys" theme="dark" mode="inline" @click="handleJump">
       <template v-for="item in menuList">
         <SubNav :key="(item as any).name" v-if="item.children && item.children.length > 0" :sub-menu="item" />
         <a-menu-item v-else :key="(item as any).name + (item as any).name">
