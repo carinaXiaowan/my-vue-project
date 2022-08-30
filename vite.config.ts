@@ -25,7 +25,7 @@ export default defineConfig({
       less: {
         javascriptEnabled: true,
         charset: false,
-        additionalData: `@import "@/assets/global.less";`
+        additionalData: `@import "@/assets/global.less"; @import "@/assets/main.less";`
       }
     },
     devSourcemap: true
