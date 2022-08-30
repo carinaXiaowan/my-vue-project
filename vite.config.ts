@@ -10,6 +10,7 @@ export default defineConfig({
   plugins: [
     vue(),
     Components({
+      dirs: ['src/components'], // 配置需要默认导入的自定义组件文件夹，该文件夹下的所有组件都会自动 import
       resolvers: [AntDesignVueResolver({ importStyle: 'less' })]
     })
   ],
@@ -23,7 +24,8 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
-        charset: false
+        charset: false,
+        additionalData: `@import "@/assets/global.less";`
       }
     },
     devSourcemap: true

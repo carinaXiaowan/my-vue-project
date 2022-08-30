@@ -35,6 +35,17 @@ const route = useRoute();
   </section>
 </template>
 <style scoped lang="less">
-@import '@/assets/global.less';
-@import './index.less';
+.layout {
+  &-right {
+    flex-direction: column;
+    display: flex;
+
+    &-content {
+      padding: 24px;
+      margin: 0 16px;
+      background: #fff;
+      flex: 1;
+    }
+  }
+}
 </style>

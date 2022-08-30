@@ -13,7 +13,12 @@ console.info('dad', import.meta.env.VITE_SOME_KEY);
 
 <template>
   <main>
-    <!-- <TheWelcome /> -->
+    <div class="home-count">222</div>
     <a-button @click="handleJumpToAbout">关于我们</a-button>
   </main>
 </template>
+<style lang="less" scoped>
+.home-count {
+  color: @primary-color;
+}
+</style>
