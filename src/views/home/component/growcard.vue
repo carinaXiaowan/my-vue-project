@@ -10,14 +10,12 @@ import { growCardList } from '../schema';
           <a-tag :color="item.color">{{ item.action }}</a-tag>
         </template>
         <div class="flex justify-between pad16">
-          <!-- <CountTo prefix="$" :startVal="1" :endVal="item.value" class="text-2xl" /> -->
-          <span class="text-18 font-weight">{{item.value}}</span>
+          <CountTo prefix="$" :startVal="1" :endVal="item.value" class="text-18 font-weight" />
           <svg-icon :iconName="item.icon" className='icon-size' :size="40" />
         </div>
         <div class="flex justify-between pad8 pad-l-r-16">
           <span>总{{ item.title }}</span>
-          <!-- <CountTo prefix="$" :startVal="1" :endVal="item.total" /> -->
-          <span>{{item.total}}</span>
+          <CountTo prefix="$" :startVal="1" :endVal="item.total" />
         </div>
       </a-card>
     </template>

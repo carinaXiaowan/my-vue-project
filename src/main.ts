@@ -5,7 +5,5 @@ import { install } from './plugins/install';
 
 // 创建实例
 const app = createApp(App);
-// 全局组件
-getGlobalComponent(app);
 // 挂载实例
 app.use(install).mount('#app');
