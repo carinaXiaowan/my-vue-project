@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/user',
         name: 'user',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/user/index.vue'),
         meta: {
           title: '用户管理',
           icon:'icon-yonghuguanli_huaban'
@@ -38,7 +38,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/doormodel',
         name: 'doormodel',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/doormodel/index.vue'),
         meta: {
           title: '装修户型',
           icon:'icon-tubiao_huxingku'
@@ -47,7 +47,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/material',
         name: 'material',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/material/index.vue'),
         meta: {
           title: '装修材料',
           icon:'icon-cailiaokufang'
@@ -56,7 +56,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/price',
         name: 'price',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/price/index.vue'),
         meta: {
           title: '装修报价',
           icon:'icon-baojia'
@@ -65,7 +65,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/design',
         name: 'design',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/design/index.vue'),
         meta: {
           title: '设计效果',
           icon:'icon-kanxiaoguo'
@@ -74,7 +74,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/order',
         name: 'order',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/order/index.vue'),
         meta: {
           title: '装修订单',
           icon:'icon-dingdan1'
@@ -83,7 +83,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: '/company',
         name: 'company',
-        component: () => import('@/views/about/index.vue'),
+        component: () => import('@/views/company/index.vue'),
         meta: {
           title: '装修公司',
           icon:'icon-zhuangxiugongsi'

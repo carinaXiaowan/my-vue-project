@@ -24,17 +24,12 @@ const handleJumpToHome = () => {
 };
 </script>
 <template>
-  <div class="about">
+  <div class="order-wrap">
     <h1>This is an about page</h1>
     <div>{{ message }}</div>
-    <a-button type="primary" style="margin-top: 20px" @click="handleUpdateMessage"
-      >更新消息</a-button
-    >
-    <a-button type="default" style="margin-top: 20px" @click="handleResetMessage"
-      >重置消息</a-button
-    >
-    <a-button type="default" style="margin-top: 20px" @click="handleJumpToHome">返回首页</a-button>
+    <a-button type="primary" style="margin-top: 20px;" @click="handleUpdateMessage">更新消息</a-button>
+    <a-button type="default" style="margin-top: 20px;" @click="handleResetMessage">重置消息</a-button>
+    <a-button type="default" style="margin-top: 20px;" @click="handleJumpToHome">返回首页</a-button>
   </div>
 </template>
 
-<style></style>
