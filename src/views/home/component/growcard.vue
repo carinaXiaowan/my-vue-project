@@ -1,7 +1,7 @@
+<!-- 顶部数据展示 -->
 <script setup lang="ts">
 import { growCardList } from '../schema';
-</script>
-  
+</script> 
 <template>
   <div class="flex grow-card-wrap">
     <template v-for="(item, index) in growCardList" :key="item.title">
