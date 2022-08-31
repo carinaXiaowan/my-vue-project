@@ -1,19 +1,37 @@
 import type { Ref } from 'vue';
-import {unref} from 'vue'
+import { unref, ref, computed, nextTick } from 'vue';
 import type { EChartsOption } from 'echarts';
-import echarts from './echarts'
+import * as echarts from 'echarts';
 
-export const useEchart = (elRef: Ref<HTMLDivElement>, theme: 'light' | 'dark' | 'default' = 'default')=>{
+export const useEchart = (elRef: Ref<HTMLDivElement>, options: any) => {
+  const echart = echarts;
+  // 定义图表实例
   let chartInstance: echarts.ECharts | null = null;
-  const initCharts = (t = theme)=>{
+  // 初始化图表
+  const initCharts = () => {
     const el = unref(elRef);
     if (!el || !unref(el)) {
       return;
     }
-    chartInstance = echarts.init(el, t);
-  }
-  
-  return {
+    chartInstance = echart.init(el, 'default');
+    chartInstance.setOption(options);
+  };
 
-  }
-}
+  // 卸载图表
+  const disposeChart = () => {
+    echart.dispose;
+  };
+
+  //自适应大小
+  const resizeChart = () => {
+    if (chartInstance) {
+      chartInstance.resize();
+    }
+  };
+
+  return {
+    initCharts,
+    disposeChart,
+    resizeChart
+  };
+};
