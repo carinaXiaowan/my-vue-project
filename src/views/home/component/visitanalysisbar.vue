@@ -5,18 +5,10 @@
   import { barOptions } from './chartOptions';
 
   const chartRef = ref<HTMLDivElement | null>(null);
-  const { initCharts, disposeChart,resizeChart } = useEchart(chartRef as Ref<HTMLDivElement>, barOptions);
+  const { initCharts } = useEchart(chartRef as Ref<HTMLDivElement>, barOptions);
   onMounted(()=>{
     initCharts()
   });
-
-  onUnmounted(()=>{
-    disposeChart()
-  })
-
-  window.onresize = function() {
-    resizeChart();
-  };
 </script>
 <template>
   <div class="echarts-box">
