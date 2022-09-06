@@ -1,9 +1,12 @@
 <script lang="ts" setup>
   import {ref, reactive, defineProps} from 'vue'
-  defineProps(['dataSource','columns','loading','pagination'])
+  defineProps(['dataSource','columns','loading','pagination','tableHeader'])
 </script>
 <template>
-  <slot name="otherBth" ></slot>
+  <div class='search-btn-options mb16' v-if="tableHeader">
+    <slot name="tableTitle" ></slot>
+    <slot name="otherBth" ></slot>
+  </div>
   <a-table 
       :dataSource="dataSource"
       :columns="columns"
@@ -16,3 +19,10 @@
       </template>
   </a-table>
 </template>
+<style scoped lang="less">
+  .search-btn-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>

@@ -15,22 +15,22 @@ export const dataSource = [
 
 export const columns = [
   {
-    title: 'Name',
+    title: '姓名',
     dataIndex: 'name',
     key: 'name'
   },
   {
-    title: 'Age',
+    title: '年龄',
     dataIndex: 'age',
     key: 'age'
   },
   {
-    title: 'Address',
+    title: '地址',
     dataIndex: 'address',
     key: 'address'
   },
   {
-    title: 'Operation',
+    title: '操作',
     dataIndex: 'operation',
     key: 'operation'
   }

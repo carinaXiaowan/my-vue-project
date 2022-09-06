@@ -8,9 +8,12 @@ import {dataSource,columns} from './schema'
 </script>
 <template>
   <div class="user-wrap">
-    <ReTable :dataSource="dataSource" :columns="columns" >
-      <template #title>
-        列表数据
+    <ReTable :dataSource="dataSource" :columns="columns" :tableHeader="true" >
+      <template #tableTitle>
+        会员列表
+      </template>
+      <template #otherBth>
+        <a-button type="primary" html-type="button">导出</a-button>
       </template>
       <template #bodyCell="{ column }">
         <template v-if="column.key === 'operation'">
