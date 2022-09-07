@@ -42,7 +42,15 @@ export const formSchema = [
     key: 'act_name',
     type: 'a-input',
     span: '8',
-    props: {
+    formItemProps: {
+      rules: [
+        {
+          required: true,
+          message: '请输入'
+        }
+      ]
+    },
+    fieldProps: {
       placeholder: '请输入'
     }
   },
@@ -51,7 +59,15 @@ export const formSchema = [
     key: 'act_type',
     type: 'a-select',
     span: '8',
-    props: {
+    formItemProps: {
+      rules: [
+        {
+          required: true,
+          message: '请选择'
+        }
+      ]
+    },
+    fieldProps: {
       options: [
         {
           label: '拉新',
