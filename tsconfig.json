@@ -8,7 +8,7 @@
     },
     "noUnusedLocals": false
   },
-
+  "jsx": "preserve",
   "references": [
     {
       "path": "./tsconfig.config.json"
