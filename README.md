@@ -1,7 +1,11 @@
 # my-vue-project
 
 # description
-使用了 Vue3.x 全家桶、ant-design-vue3.x 和 typescript4.x，实践 vue3.x 的新特性以及玩法，不得不说 vue3.x 的 Composition API 相比于 vue2.x 的 Options API 灵活很多，让我们可以灵活地组合组件逻辑，我们可以很轻松的使用 hooks 的形式去代替以前 mixins 等的写法
+- 使用了 Vue3.x 全家桶、ant-design-vue3.x 和 typescript4.x，实践 vue3.x 的新特性以及玩法，
+- 使用了pinia代替vuex
+- 二次封装了table组件
+- 二次封装了form组件
+
 
 ## Project Setup
 
@@ -26,3 +30,8 @@ yarn build
 ```sh
 yarn lint
 ```
+
+#### 组件介绍
+- company组件中，list组件使用的是渲染函数
+- company组件中，item组件使用的是函数式组件
+- 使用jsx必须安装@vuejs/babel-plugin-jsx插件   地址https://github.com/vuejs/babel-plugin-jsx
