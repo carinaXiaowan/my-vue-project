@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import {getGlobalComponent} from './components/index'
 import { install } from './plugins/install';
 
 // 创建实例

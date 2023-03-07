@@ -19,7 +19,7 @@ module.exports = {
   trailingComma: 'none', // 末尾不需要逗号
   bracketSpacing: true, // 大括号内的首尾需要空格
   bracketSameLine: false, // 将多行 HTML（HTML、JSX、Vue、Angular）元素反尖括号需要换行
-  arrowParens: 'always', // 箭头函数，只有一个参数的时候，也需要括号 avoid
+  arrowParens: 'avoid', // 箭头函数，只有一个参数的时候，也需要括号 avoid
   rangeStart: 0, // 每个文件格式化的范围是开头-结束
   rangeEnd: Infinity, // 每个文件格式化的范围是文件的全部内容
   requirePragma: false, // 不需要写文件开头的 @prettier

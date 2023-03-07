@@ -45,11 +45,24 @@ watch(
       <img src="~@/assets/images/logo.png" alt="" />
       <h2 v-show="!collapsed" class="title">萌宠</h2>
     </div>
-    <a-menu v-model:selectedKeys="options.selectedKeys" theme="dark" mode="inline" @click="handleJump">
+    <a-menu
+      v-model:selectedKeys="options.selectedKeys"
+      theme="dark"
+      mode="inline"
+      @click="handleJump"
+    >
       <template v-for="item in menuList">
-        <SubNav :key="(item as any).name" v-if="item.children && item.children.length > 0" :sub-menu="item" />
+        <SubNav
+          :key="(item as any).name"
+          v-if="item.children && item.children.length > 0"
+          :sub-menu="item"
+        />
         <a-menu-item v-else :key="(item as any).name + (item as any).name">
-          <svg-icon :iconName="item.meta.icon" color="rgba(255,255,255,0.65)" :className="collapsed ? 'icon' : ''"></svg-icon>
+          <svg-icon
+            :iconName="item.meta.icon"
+            color="rgba(255,255,255,0.65)"
+            :className="collapsed ? 'icon' : ''"
+          ></svg-icon>
           <span v-if="!collapsed">{{ (item.meta as any).title }}</span>
         </a-menu-item>
       </template>

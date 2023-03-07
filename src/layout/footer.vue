@@ -1,12 +1,9 @@
 <!-- 页面渲染 -->
-  <template>
-    <a-layout-footer class="footer-wrap">
-        Ant Design ©2018 Created by Ant UED
-      </a-layout-footer>
-  </template>
-  <style scoped lang="less">
-  .footer-wrap {
-    text-align: center;
-  }
-  </style>
-  
+<template>
+  <a-layout-footer class="footer-wrap"> 小陈装修©2018 Created by Carina </a-layout-footer>
+</template>
+<style scoped lang="less">
+.footer-wrap {
+  text-align: center;
+}
+</style>
