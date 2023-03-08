@@ -6,7 +6,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noUnusedLocals": false
+    "noUnusedLocals": false,
+    "noImplicitAny": true
   },
   "jsx": "preserve",
   "references": [

@@ -23,7 +23,7 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
         /\.md$/ // .md
       ],
-      imports: ['vue', 'vue-router'], //导入的api
+      imports: ['vue', 'vue-router', 'pinia'], //导入的api
       resolvers: [AntDesignVueResolver()], //导入的antd的相关api组件
       dts: 'src/auto-import.d.ts',
       eslintrc: {

@@ -4,7 +4,6 @@ import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import { appPinia } from '@/stores/app';
-import { storeToRefs } from 'pinia';
 
 // 逻辑处理
 dayjs.locale('zh-cn');
