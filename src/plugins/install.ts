@@ -5,8 +5,8 @@ import { message, notification, Modal } from 'ant-design-vue';
 import DatePicker from 'ant-design-vue/es/date-picker/moment';
 import TimePicker from 'ant-design-vue/es/time-picker/moment';
 import Calendar from 'ant-design-vue/es/calendar/moment';
-import router from '../router';
 import 'ant-design-vue/dist/antd.less';
+import router from '../router';
 
 export function install(app: App<Element>) {
   // 状态
