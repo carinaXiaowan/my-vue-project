@@ -1,8 +1,6 @@
 <script setup lang="ts">
 // 文件导入
-import { RouterView } from 'vue-router';
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
-import { ref } from 'vue';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import { appPinia } from '@/stores/app';
