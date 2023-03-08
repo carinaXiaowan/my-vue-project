@@ -1,16 +1,18 @@
 <script setup lang="ts">
 // 文件导入
+import { ref } from 'vue';
+import { storeToRefs } from 'pinia';
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
-import { appPinia } from '@/stores/app';
+import { useAppStore } from '@/stores/app';
 
 // 逻辑处理
 dayjs.locale('zh-cn');
 const locale = ref();
 locale.value = zhCN;
-const appPiniaData = appPinia();
-const { loading } = storeToRefs(appPiniaData);
+const useAppStoreData = useAppStore();
+const { loading } = storeToRefs(useAppStoreData);
 </script>
 
 <template>

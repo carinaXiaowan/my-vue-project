@@ -1,16 +1,16 @@
+import { reactive, computed } from 'vue';
 import { defineStore } from 'pinia';
 
-export const homePinia = defineStore('homePinia', {
-  state: () => ({
+export const useHomeStore = defineStore('useHomeStore', () => {
+  const useInfo = reactive({
     firstName: 'carina',
     lastName: 'chen'
-  }),
-  getters: {
-    fullName: (state) => state.firstName + state.lastName
-  },
-  actions: {
-    setFirstName(data: string) {
-      this.firstName = data;
-    }
-  }
+  });
+  const fullName = computed(() => {
+    return useInfo.firstName + useInfo.lastName;
+  });
+  const setFirstName = (name: any) => {
+    useInfo.firstName = name;
+  };
+  return { useInfo, fullName, setFirstName };
 });

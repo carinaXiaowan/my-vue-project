@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export const appPinia = defineStore('appPinia', {
+export const useAppStore = defineStore('useAppStore', {
   state: () => ({
     loading: false
   }),
@@ -8,5 +8,8 @@ export const appPinia = defineStore('appPinia', {
     setLoading(data: boolean) {
       this.loading = data;
     }
+  },
+  persist: {
+    enabled: true
   }
 });

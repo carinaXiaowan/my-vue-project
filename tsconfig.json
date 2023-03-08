@@ -6,6 +6,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["pinia-plugin-persist"],
     "noUnusedLocals": false,
     "noImplicitAny": true
   },

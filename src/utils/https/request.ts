@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { appPinia } from '@/stores/app';
+import { useAppStore } from '@/stores/app';
 import { getCurrentInstance } from 'vue';
 import { codeMessage } from './error';
 import { getToken, setToken, getRefreshToken } from './auth';
 
-const appPiniaData = appPinia(); //状态数据
+const useAppStoreData = useAppStore(); //状态数据
 const { proxy }: any = getCurrentInstance();
 let isRefreshing = false; // 标记是否正在刷新 token
 let requests: any = []; // 存储待重发请求的数组
@@ -27,22 +27,22 @@ const service = axios.create({
 service.interceptors.request.use(
   (config: any) => {
     // 创建loading实例
-    appPiniaData.setLoading(true);
+    useAppStoreData.setLoading(true);
     return config;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
   }
 );
 // 响应拦截
 service.interceptors.response.use(
-  (response) => {
+  response => {
     successHandle(response);
-    appPiniaData.$reset(); // 关闭loading
+    useAppStoreData.$reset(); // 关闭loading
   },
-  (error) => {
+  error => {
     errorHandle(error); // 处理错误状态码
-    appPiniaData.$reset(); // 关闭loading
+    useAppStoreData.$reset(); // 关闭loading
   }
 );
 
@@ -76,7 +76,7 @@ function errorHandle(error: any) {
         if (!isRefreshing) {
           isRefreshing = true;
           return refreshToken(true)
-            .then((res) => {
+            .then(res => {
               const { access_token } = res.data;
               setToken(access_token);
               config.headers.Authorization = `${access_token}`;
@@ -85,14 +85,14 @@ function errorHandle(error: any) {
               requests = []; // 重新请求完清空
               return service(config);
             })
-            .catch((err) => {
+            .catch(err => {
               console.log('抱歉，您的登录状态已失效，请重新登录！');
               isRefreshing = false;
               return Promise.reject(err);
             });
         } else {
           // 返回未执行 resolve 的 Promise
-          return new Promise((resolve) => {
+          return new Promise(resolve => {
             // 用函数形式将 resolve 存入，等待刷新后再执行
             requests.push((token: string) => {
               config.headers.Authorization = `${token}`;

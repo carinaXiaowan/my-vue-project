@@ -1,20 +1,27 @@
 <script setup lang="ts">
 // 导入文件
-import { aboutPinia } from '@/stores/about';
+import { useRouter } from 'vue-router';
+import { storeToRefs } from 'pinia';
+import { useAboutStore } from '@/stores/about';
+import { useHomeStore } from '@/stores/home';
 
 // 初始变量
 const router = useRouter(); //路由
-const aboutPiniaData = aboutPinia(); //状态数据
-const { message } = storeToRefs(aboutPiniaData);
+const useAboutStoreData = useAboutStore(); //状态数据
+const useHomeStoreData = useHomeStore();
+// 赋值
+useHomeStoreData.setFirstName('zoe');
+const { message } = storeToRefs(useAboutStoreData);
+console.info(useHomeStoreData.fullName);
 // 逻辑部分
 // 更新消息
 const handleUpdateMessage = () => {
   console.info('我是按钮点击');
-  aboutPiniaData.setNewMessage('我是更新消息的');
+  useAboutStoreData.setNewMessage('我是更新消息的');
 };
 // 重置消息
 const handleResetMessage = () => {
-  aboutPiniaData.$reset();
+  useAboutStoreData.$reset();
 };
 // 返回首页
 const handleJumpToHome = () => {

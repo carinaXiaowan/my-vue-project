@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-export const aboutPinia = defineStore('aboutPinia', {
+export const useAboutStore = defineStore('useAboutStore', {
   state: () => ({
     message: '我是原始消息'
   }),

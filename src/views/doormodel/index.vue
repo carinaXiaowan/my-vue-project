@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // 导入文件
+import { reactive } from 'vue';
 import type { FormInstance } from 'ant-design-vue';
 import { dataSource, columns, formSchema } from './schema';
 
