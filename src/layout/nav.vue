@@ -14,7 +14,7 @@ const router = useRouter();
 const route = useRoute();
 let menuList: Array<any> | undefined = router.options.routes[0].children;
 // 导航栏过滤掉登录页面
-menuList = menuList?.filter((item) => item.name != 'login');
+menuList = menuList?.filter(item => item.name != 'login');
 // 页面跳转
 const handleJump = (item: any) => {
   // 不知道为啥，antd的a-menu组件的key多拼接了一次
@@ -42,8 +42,8 @@ watch(
   <!-- 左侧菜单导航 -->
   <a-layout-sider v-model:collapsed="collapsed" collapsible class="nav-wrap">
     <div class="logo">
-      <img src="~@/assets/images/logo.png" alt="" />
-      <h2 v-show="!collapsed" class="title">萌宠</h2>
+      <img src="~@/assets/images/logo2.jpeg" alt="" />
+      <h2 v-show="!collapsed" class="title">小陈装修</h2>
     </div>
     <a-menu
       v-model:selectedKeys="options.selectedKeys"

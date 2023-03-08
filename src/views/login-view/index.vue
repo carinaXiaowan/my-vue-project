@@ -1,5 +1,7 @@
 <script setup lang="ts">
 // 导入的文件
+import { ref, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 import type { FormInstance } from 'ant-design-vue';
 import type { FormState } from './interface.d';
 

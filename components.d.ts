@@ -36,6 +36,7 @@ declare module '@vue/runtime-core' {
     ATag: typeof import('ant-design-vue/es')['Tag']
     ATooltip: typeof import('ant-design-vue/es')['Tooltip']
     ATypographyLink: typeof import('ant-design-vue/es')['TypographyLink']
+    BasicArrow: typeof import('./src/components/base/BasicArrow/index.vue')['default']
     BasicForm: typeof import('./src/components/base/BasicForm/index.vue')['default']
     Components: typeof import('./src/components/base/BasicForm/components/index.vue')['default']
     copy: typeof import('./src/components/base/SearchTable copy/index.vue')['default']
