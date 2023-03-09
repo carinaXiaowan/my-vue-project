@@ -18,6 +18,7 @@ service.interceptors.request.use(
   (config: any) => {
     // 创建loading实例
     useAppStoreData.setLoading(true);
+    config.headers['Authorization'] = getToken();
     return config;
   },
   error => {
@@ -28,6 +29,9 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     useAppStoreData.$reset(); // 关闭loading
+    if (response.status !== 200) {
+      return Promise.reject(new Error('Error'));
+    }
     return Promise.resolve(response.data);
   },
   error => {

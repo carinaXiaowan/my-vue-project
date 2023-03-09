@@ -1,5 +1,7 @@
 <script setup lang="ts">
 // 导入文件
+import { useRouter } from 'vue-router';
+import { storeToRefs } from 'pinia';
 import { useAboutStore } from '@/stores/about';
 
 // 初始变量

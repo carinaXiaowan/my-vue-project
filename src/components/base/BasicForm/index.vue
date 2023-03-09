@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 // 导入文件
+import { ref, unref } from 'vue';
 import type { FormInstance } from 'ant-design-vue';
+import Comp from './components/index.vue';
 // 属性值
 const props = defineProps(['formSchema', 'layout', 'model', 'search']);
 
