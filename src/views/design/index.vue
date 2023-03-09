@@ -1,23 +1,24 @@
 <script setup lang="ts">
 // 导入文件
+import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { useAboutStore } from '@/stores/about';
 import { useHomeStore } from '@/stores/home';
+import Service from '@/utils/https/request';
 
 // 初始变量
 const router = useRouter(); //路由
 const useAboutStoreData = useAboutStore(); //状态数据
 const useHomeStoreData = useHomeStore();
-// 赋值
+
+// 逻辑部分
 useHomeStoreData.setFirstName('zoe');
 const { message } = storeToRefs(useAboutStoreData);
-console.info(useHomeStoreData.fullName);
-// 逻辑部分
 // 更新消息
-const handleUpdateMessage = () => {
-  console.info('我是按钮点击');
-  useAboutStoreData.setNewMessage('我是更新消息的');
+const handleUpdateMessage = async () => {
+  const message = await getInfo();
+  useAboutStoreData.setNewMessage(message);
 };
 // 重置消息
 const handleResetMessage = () => {
@@ -26,6 +27,15 @@ const handleResetMessage = () => {
 // 返回首页
 const handleJumpToHome = () => {
   router.push('/');
+};
+const getInfo = async () => {
+  try {
+    const result = await Service({
+      method: 'get',
+      url: '/list_user'
+    });
+    return result.data;
+  } catch (error) {}
 };
 </script>
 <template>

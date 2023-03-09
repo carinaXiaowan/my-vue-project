@@ -39,6 +39,12 @@ export default defineConfig({
         target: 'http://localhost:3001',
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, '')
+      },
+      '/user': {
+        //以api3为开始的所有的接口请求
+        target: 'http://localhost:3456', //node服务地址
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/user/, '')
       }
     }
   }
