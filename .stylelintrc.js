@@ -3,7 +3,8 @@ module.exports = {
     'stylelint-config-standard',
     'stylelint-config-prettier',
     'stylelint-config-recommended-less',
-    'stylelint-config-standard-vue'
+    'stylelint-config-standard-vue',
+    'stylelint-config-idiomatic-order'
   ],
   plugins: ['stylelint-order'],
   // 不同格式的文件指定自定义语法
