@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
         component: Home,
         meta: {
           title: '首页',
-          icon:'icon-shouye'
+          icon: 'icon-shouye'
         }
       },
       {
@@ -32,7 +32,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/user/index.vue'),
         meta: {
           title: '用户管理',
-          icon:'icon-yonghuguanli_huaban'
+          icon: 'icon-yonghuguanli_huaban'
         }
       },
       {
@@ -41,7 +41,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/doormodel/index.vue'),
         meta: {
           title: '装修户型',
-          icon:'icon-tubiao_huxingku'
+          icon: 'icon-tubiao_huxingku'
         }
       },
       {
@@ -50,7 +50,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/material/index.vue'),
         meta: {
           title: '装修材料',
-          icon:'icon-cailiaokufang'
+          icon: 'icon-cailiaokufang'
         }
       },
       {
@@ -59,7 +59,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/price/index.vue'),
         meta: {
           title: '装修报价',
-          icon:'icon-baojia'
+          icon: 'icon-baojia'
         }
       },
       {
@@ -68,7 +68,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/design/index.vue'),
         meta: {
           title: '设计效果',
-          icon:'icon-kanxiaoguo'
+          icon: 'icon-kanxiaoguo'
         }
       },
       {
@@ -77,7 +77,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/order/index.vue'),
         meta: {
           title: '装修订单',
-          icon:'icon-dingdan1'
+          icon: 'icon-dingdan1'
         }
       },
       {
@@ -86,9 +86,18 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/company/index.vue'),
         meta: {
           title: '装修公司',
-          icon:'icon-zhuangxiugongsi'
+          icon: 'icon-zhuangxiugongsi'
         }
       },
+      {
+        path: '/customer-form',
+        name: 'customer-form',
+        component: () => import('@/views/customer-form/index.vue'),
+        meta: {
+          title: '动态表单',
+          icon: 'icon-zhuangxiugongsi'
+        }
+      }
     ]
   }
 ];
